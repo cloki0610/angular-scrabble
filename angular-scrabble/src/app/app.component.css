@@ -10,6 +10,7 @@ h3 {
   font-weight: 700;
   font-size: 20px;
   line-height: 140%;
+  margin-bottom: 0;
   /* identical to box height, or 28px */
 
   letter-spacing: -0.25px;

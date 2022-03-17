@@ -1,6 +1,6 @@
 <div class="container-fluid pt-3">
   <div class="row mx-2 my-4">
-    <app-card id="info" class="col-12 col-lg-4">
+    <app-card id="info" class="col-12 col-lg-4" [icon]="'false'">
       <h3 title>Do you love scrabble?</h3>
       <p content>
         This is just some placeholder text about scrabble. Lorem ipsum dolor sit
@@ -8,15 +8,17 @@
         labore et dolore magna aliqua.
       </p>
     </app-card>
-    <app-card id="call-us" class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-      <h3 title>Call us</h3>
+    <app-card id="call-us" class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0" [icon]="'true'">
+      <p icon><mat-icon svgIcon="callus"></mat-icon></p>
+      <h3 title id="callus-title">Call us</h3>
       <p content>
         We are available by phone 9am - 5pm<br /><u class="fw-bold"
           >0115 123 4567</u
         >
       </p>
     </app-card>
-    <app-card class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+    <app-card class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0" [icon]="'true'">
+      <p icon><mat-icon svgIcon="findus"></mat-icon></p>
       <h3 title>Find us</h3>
       <p content>
         123 fake street, Someplace, Nottignham, NG1 2TR<br /><u class="fw-bold"
@@ -26,6 +28,8 @@
     </app-card>
   </div>
   <div class="row mx-2 mt-4">
-    <app-card class="col px-0 m-2"></app-card>
+    <app-card class="col px-0 m-2" [icon]="'false'">
+      <h3 title>Results</h3>
+    </app-card>
   </div>
 </div>

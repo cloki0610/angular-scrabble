@@ -1,4 +1,15 @@
 <mat-card class="card mat-elevation-z0">
-    <mat-card-title><ng-content select="[title]"></ng-content></mat-card-title>
-    <mat-card-content><ng-content select="[content]"></ng-content></mat-card-content>
+  <div class="row gx-0">
+    <div [ngClass]="icon == 'true' ? 'col-1 text-center' : 'd-none'">
+        <ng-content select="[icon]"></ng-content>
+    </div>
+    <div [ngClass]="icon == 'true' ? 'col-11' : 'col-12'">
+      <mat-card-title
+        ><ng-content select="[title]"></ng-content
+      ></mat-card-title>
+      <mat-card-content
+        ><ng-content select="[content]"></ng-content
+      ></mat-card-content>
+    </div>
+  </div>
 </mat-card>
