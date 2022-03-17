@@ -1,0 +1,36 @@
+.mat-card:not([class*="mat-elevation-z"]) {
+  box-shadow: 0;
+}
+
+h3 {
+  /* H3 */
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  /* identical to box height, or 28px */
+
+  letter-spacing: -0.25px;
+
+  color: #000000;
+}
+
+p {
+  /* Body Regular */
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 155%;
+  /* or 25px */
+
+  color: #000000;
+}
+
+mat-chip {
+    transition: none !important;
+    box-shadow: none !important;
+}
