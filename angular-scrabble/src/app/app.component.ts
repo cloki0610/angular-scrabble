@@ -39,7 +39,7 @@ export class AppComponent {
       .get<any>('https://mocki.io/v1/dac50ece-1793-4e95-9040-fbb6cd2dbb7a')
       .subscribe((response: any) => {
         this.resultList = response.Results;
-        this.playerResultList = this.playerList.map((item, index) => {
+        this.playerResultList = this.playerList.map((item) => {
           for (let result of this.resultList) {
             if (item.PlayerId == result.PlayerId) {
               return {
@@ -52,7 +52,7 @@ export class AppComponent {
         }).sort(
           (a: any, b: any): number => b.TotalScore - a.TotalScore
         ).map((item, index) => {
-          return {...item, Position: index+1}
+          return {...item, Position: index + 1}
         });
       });
   }

@@ -9,9 +9,8 @@ export class CardComponent implements OnInit {
   @ContentChild(TemplateRef, {static:false}) content!:TemplateRef<any>;
   @Input() icon!:boolean;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }
