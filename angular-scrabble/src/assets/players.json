@@ -1,0 +1,10 @@
+{
+  "Players": [
+    { "PlayerId": 1, "Name": "Karl Krueger" },
+    { "PlayerId": 2, "Name": "Aaron Ashworth" },
+    { "PlayerId": 3, "Name": "Elliot Earnshaw" },
+    { "PlayerId": 4, "Name": "Tony Troy" },
+    { "PlayerId": 5, "Name": "Sally Smith" },
+    { "PlayerId": 6, "Name": "Bob Bronson" }
+  ]
+}
