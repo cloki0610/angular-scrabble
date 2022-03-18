@@ -1,7 +1,7 @@
-<table mat-table [dataSource]="PlayerResultList|slice:0:5" class="mat-elevation-z0">
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)" class="mat-elevation-z0">
   <!-- Position Column -->
   <ng-container matColumnDef="Position">
-    <th mat-header-cell *matHeaderCellDef [attr.colspan]="1" class="text-dark fs-6 fw-bold">Position</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by position" [attr.colspan]="1" class="text-dark fs-6 fw-bold">Position</th>
     <td mat-cell *matCellDef="let element" [attr.colspan]="1" class="fw-bold">{{element.Position}}<span class="ps-1"
         *ngIf="element.Position=='1'">
         <mat-icon svgIcon="trophy" style="color:#F3D432;"></mat-icon>
@@ -13,21 +13,21 @@
   </ng-container>
   <!-- Player Name Column -->
   <ng-container matColumnDef="Name">
-    <th mat-header-cell *matHeaderCellDef [attr.colspan]="2">Player Name</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by player name" [attr.colspan]="2">Player Name</th>
     <td mat-cell *matCellDef="let element" [attr.colspan]="2">{{element.Name}}</td>
   </ng-container>
   <!-- Games Played Column-->
   <ng-container matColumnDef="GamesPlayed">
-    <th mat-header-cell *matHeaderCellDef [attr.colspan]="1">Games PLayed</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by games played" [attr.colspan]="1">Games Played</th>
     <td mat-cell *matCellDef="let element" [attr.colspan]="1">{{element.GamesPlayed}}</td>
   </ng-container>
   <!-- Total Score Column-->
   <ng-container matColumnDef="TotalScore">
-    <th mat-header-cell *matHeaderCellDef [attr.colspan]="1">Total Score</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by total score" [attr.colspan]="1">Total Score</th>
     <td mat-cell *matCellDef="let element" [attr.colspan]="1">{{element.TotalScore}}</td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns" class="bg-result-header"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns; let i=index"
+  <tr mat-row *matRowDef="let row; columns: displayedColumns|slice:0:5; let i=index"
     [attr.data-player]="row.Name+'-'+row.TotalScore+'-'+i"></tr>
 </table>
