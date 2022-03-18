@@ -11,8 +11,8 @@ import players from '../assets/players.json';
 })
 export class AppComponent {
   public playerList: Array<any> = players.Players;
-  public result: Array<any> = new Array<any>();
-  public playerResult: Array<any>[] = new Array<any>();
+  public resultList: Array<any> = new Array<any>();
+  public playerResultList: Array<any>[] = new Array<any>();
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
@@ -38,13 +38,22 @@ export class AppComponent {
     this.http
       .get<any>('https://mocki.io/v1/dac50ece-1793-4e95-9040-fbb6cd2dbb7a')
       .subscribe((response: any) => {
-        this.result = response.Results;
-        this.playerResult = this.playerList.map((item, index) => ({
-          ...item,
-          "TotalScore": this.result[index].TotalScore,
-          "GamesPlayed": this.result[index].GamesPlayed
-        }));
-        console.log(this.playerResult);
+        this.resultList = response.Results;
+        this.playerResultList = this.playerList.map((item, index) => {
+          for (let result of this.resultList) {
+            if (item.PlayerId == result.PlayerId) {
+              return {
+                ...item,
+                TotalScore: result.TotalScore,
+                GamesPlayed: result.GamesPlayed,
+              };
+            }
+          }
+        }).sort(
+          (a: any, b: any): number => b.TotalScore - a.TotalScore
+        ).map((item, index) => {
+          return {...item, Position: index+1}
+        });
       });
   }
 }

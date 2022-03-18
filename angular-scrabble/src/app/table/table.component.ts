@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css']
+  styleUrls: ['./table.component.css'],
 })
 export class TableComponent implements OnInit {
+  displayedColumns: string[] = ['Position', 'Name', 'GamesPlayed', 'TotalScore'];
 
-  constructor() { }
+  @Input() PlayerResultList!: Array<any>;
+
+  constructor() {}
 
   ngOnInit(): void {
+    console.log(this.PlayerResultList);
   }
 
 }
