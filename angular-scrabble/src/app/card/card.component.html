@@ -1,9 +1,9 @@
 <mat-card class="card mat-elevation-z0">
   <div class="row gx-0">
-    <div [ngClass]="icon == 'true' ? 'col-1 text-center' : 'd-none'">
+    <div [ngClass]="icon == 'true' ? 'col-12 col-sm-1 text-center mb-0' : 'd-none'">
         <ng-content select="[icon]"></ng-content>
     </div>
-    <div [ngClass]="icon == 'true' ? 'col-11' : 'col-12'">
+    <div [ngClass]="icon == 'true' ? 'col-12 col-sm-11 ps-0 ps-sm-1' : 'col-12'">
       <mat-card-title
         ><ng-content select="[title]"></ng-content
       ></mat-card-title>

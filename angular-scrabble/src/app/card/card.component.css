@@ -1,9 +1,21 @@
 .card {
   border: 1px solid #e1e1e1;
   border-radius: 12px;
-  padding: 30px;
+  padding: 15px;
   box-sizing: border-box;
   background: #ffffff;
   height: 206px;
-  overflow-y: scroll;
+  overflow-y: auto;
+}
+
+@media (min-width: 576px) {
+  .card {
+    padding: 25px;
+  }
+}
+
+@media (min-width: 992px) {
+  .card {
+    padding: 30px;
+  }
 }
