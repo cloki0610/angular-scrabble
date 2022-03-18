@@ -1,25 +1,25 @@
-<table mat-table [dataSource]="PlayerResultList" class="mat-elevation-z0">
+<table mat-table [dataSource]="PlayerResultList|slice:0:5" class="mat-elevation-z0">
   <!-- Position Column -->
   <ng-container matColumnDef="Position">
-    <th mat-header-cell *matHeaderCellDef>Position</th>
-    <td mat-cell *matCellDef="let element">{{element.Position}}</td>
+    <th mat-header-cell *matHeaderCellDef  [attr.colspan]="1">Position</th>
+    <td mat-cell *matCellDef="let element" [attr.colspan]="1">{{element.Position}}</td>
   </ng-container>
   <!-- Player Name Column -->
   <ng-container matColumnDef="Name">
-    <th mat-header-cell *matHeaderCellDef>Player Name</th>
-    <td mat-cell *matCellDef="let element">{{element.Name}}</td>
+    <th mat-header-cell *matHeaderCellDef  [attr.colspan]="2">Player Name</th>
+    <td mat-cell *matCellDef="let element" [attr.colspan]="2">{{element.Name}}</td>
   </ng-container>
   <!-- Games Played Column-->
   <ng-container matColumnDef="GamesPlayed">
-    <th mat-header-cell *matHeaderCellDef>Games PLayed</th>
-    <td mat-cell *matCellDef="let element">{{element.GamesPlayed}}</td>
+    <th mat-header-cell *matHeaderCellDef  [attr.colspan]="1">Games PLayed</th>
+    <td mat-cell *matCellDef="let element" [attr.colspan]="1">{{element.GamesPlayed}}</td>
   </ng-container>
-  <!-- Games Played Column-->
+  <!-- Total Score Column-->
   <ng-container matColumnDef="TotalScore">
-    <th mat-header-cell *matHeaderCellDef>Total Score</th>
-    <td mat-cell *matCellDef="let element">{{element.TotalScore}}</td>
+    <th mat-header-cell *matHeaderCellDef [attr.colspan]="1">Total Score</th>
+    <td mat-cell *matCellDef="let element" [attr.colspan]="1">{{element.TotalScore}}</td>
   </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns" class="bg-result-header"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns; let i=index" [attr.data-player]="row.Name+'-'+row.TotalScore+'-'+i"></tr>
 </table>

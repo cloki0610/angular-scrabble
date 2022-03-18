@@ -1,0 +1,21 @@
+table {
+  width: 100%;
+}
+
+.bg-result-header {
+  background-color: #e1e1e1;
+}
+
+.last-col {
+  padding-right: 0;
+}
+
+th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+  padding-right: 0;
+}
+
+@media (max-width: 576px) {
+  .cdk-column-GamesPlayed {
+    display: none!important;
+  }
+}

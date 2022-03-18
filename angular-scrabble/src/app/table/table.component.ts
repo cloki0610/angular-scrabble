@@ -12,8 +12,6 @@ export class TableComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.PlayerResultList);
-  }
+  ngOnInit(): void {}
 
 }

@@ -4,8 +4,8 @@
   padding: 15px;
   box-sizing: border-box;
   background: #ffffff;
-  height: 206px;
-  overflow-y: auto;
+  min-height: 206px;
+  overflow-y: display;
 }
 
 @media (min-width: 576px) {

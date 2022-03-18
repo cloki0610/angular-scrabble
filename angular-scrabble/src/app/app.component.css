@@ -2,9 +2,23 @@
   box-shadow: 0;
 }
 
-h3 {
-  /* H3 */
+mat-chip {
+  transition: none !important;
+  box-shadow: none !important;
+}
 
+body p {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 155%;
+  /* or 25px */
+
+  color: #000000;
+}
+
+h3 {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
@@ -18,20 +32,17 @@ h3 {
   color: #000000;
 }
 
-p {
-  /* Body Regular */
-
-  font-family: "Lato";
+h5 {
+  font-family: "Montserrat";
   font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 155%;
-  /* or 25px */
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 160%;
+  /* or 22px */
 
-  color: #000000;
+  letter-spacing: -0.5px;
 }
 
-mat-chip {
-    transition: none !important;
-    box-shadow: none !important;
+#info-content {
+  max-height: 90px;
 }
