@@ -10,8 +10,9 @@ import players from '../assets/players.json';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  public playerList: { PlayerId: number; Name: string }[] = players.Players;
+  public playerList: Array<any> = players.Players;
   public result: Array<any> = new Array<any>();
+  public playerResult: Array<any>[] = new Array<any>();
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
@@ -38,8 +39,12 @@ export class AppComponent {
       .get<any>('https://mocki.io/v1/dac50ece-1793-4e95-9040-fbb6cd2dbb7a')
       .subscribe((response: any) => {
         this.result = response.Results;
-        console.log(this.result);
-        console.log(this.playerList)
+        this.playerResult = this.playerList.map((item, index) => ({
+          ...item,
+          "TotalScore": this.result[index].TotalScore,
+          "GamesPlayed": this.result[index].GamesPlayed
+        }));
+        console.log(this.playerResult);
       });
   }
 }
