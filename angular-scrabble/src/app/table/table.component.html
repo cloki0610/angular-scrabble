@@ -1,17 +1,24 @@
 <table mat-table [dataSource]="PlayerResultList|slice:0:5" class="mat-elevation-z0">
   <!-- Position Column -->
   <ng-container matColumnDef="Position">
-    <th mat-header-cell *matHeaderCellDef  [attr.colspan]="1">Position</th>
-    <td mat-cell *matCellDef="let element" [attr.colspan]="1">{{element.Position}}</td>
+    <th mat-header-cell *matHeaderCellDef [attr.colspan]="1" class="text-dark fs-6 fw-bold">Position</th>
+    <td mat-cell *matCellDef="let element" [attr.colspan]="1" class="fw-bold">{{element.Position}}<span class="ps-1"
+        *ngIf="element.Position=='1'">
+        <mat-icon svgIcon="trophy" style="color:#F3D432;"></mat-icon>
+      </span><span class="ps-1" *ngIf="element.Position=='2'">
+        <mat-icon svgIcon="trophy" style="color:#CAEAE8;"></mat-icon>
+      </span><span *ngIf="element.Position=='3'" class="ps-1">
+        <mat-icon svgIcon="trophy" style="color:#F38332;"></mat-icon>
+      </span></td>
   </ng-container>
   <!-- Player Name Column -->
   <ng-container matColumnDef="Name">
-    <th mat-header-cell *matHeaderCellDef  [attr.colspan]="2">Player Name</th>
+    <th mat-header-cell *matHeaderCellDef [attr.colspan]="2">Player Name</th>
     <td mat-cell *matCellDef="let element" [attr.colspan]="2">{{element.Name}}</td>
   </ng-container>
   <!-- Games Played Column-->
   <ng-container matColumnDef="GamesPlayed">
-    <th mat-header-cell *matHeaderCellDef  [attr.colspan]="1">Games PLayed</th>
+    <th mat-header-cell *matHeaderCellDef [attr.colspan]="1">Games PLayed</th>
     <td mat-cell *matCellDef="let element" [attr.colspan]="1">{{element.GamesPlayed}}</td>
   </ng-container>
   <!-- Total Score Column-->
@@ -21,5 +28,6 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns" class="bg-result-header"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns; let i=index" [attr.data-player]="row.Name+'-'+row.TotalScore+'-'+i"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns; let i=index"
+    [attr.data-player]="row.Name+'-'+row.TotalScore+'-'+i"></tr>
 </table>
